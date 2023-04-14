@@ -21,11 +21,10 @@ resource "aws_iam_role" "cloudresume-lambda" {
 
 resource "aws_iam_role_policy_attachment" "lambda_policy" {
    role = aws_iam_role.cloudresume-lambda.name
-   policy_arn = aws_iam_policy.dynamodb-lambda-policy.arn
-   policy_arn = aws_iam_policy.cloudwatch-lambda-policy.arn
+   policy_arn = aws_iam_policy.dynamodb-cloudwatch-lambda-policy.arn
 }
           
-resource "aws_iam_policy" "dynamodb-lambda-policy" {
+resource "aws_iam_policy" "dynamodb-cloudwatch-lambda-policy" {
    name = "dynamodb-lambda"
    policy = jsonencode({
         "Version": "2012-10-17",
@@ -132,16 +131,7 @@ resource "aws_iam_policy" "dynamodb-lambda-policy" {
                         ]
                     }
                 }
-            }
-        ]
-    })
-}
-
-resource "aws_iam_policy" "cloudwatch-lambda-policy" {
-   name = "cloudwatch-lambda"
-   policy = jsonencode({
-        "Version": "2012-10-17",
-        "Statement": [
+            },
             {
                 "Effect": "Allow",
                 "Action": [
@@ -176,3 +166,4 @@ resource "aws_iam_policy" "cloudwatch-lambda-policy" {
         ]
     })
 }
+
