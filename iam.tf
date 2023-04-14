@@ -1,5 +1,5 @@
 resource "aws_iam_role" "cloudresume-lambda" {
-    name = "viewcount_lambda"
+    name = "cloudresume_lambda"
 
     assume_role_policy = jsonencode({
         "Version": "2012-10-17",
