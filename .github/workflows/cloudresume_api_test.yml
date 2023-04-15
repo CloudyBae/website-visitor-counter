@@ -23,4 +23,4 @@ jobs:
     - name: Run tests
       run: |
         pip install pytest
-        pytest /test/test_cloudresume_api.py -v
+        pytest ./test/test_cloudresume_api.py -v
