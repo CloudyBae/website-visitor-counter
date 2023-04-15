@@ -22,4 +22,4 @@ jobs:
     - name: Run tests
       run: |
         pip install pytest
-        pytest .tests/test_lambda.py -s -v --durations=0
+        pytest tests/test_lambda.py -s -v --durations=0
