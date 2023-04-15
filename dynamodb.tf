@@ -3,11 +3,13 @@ resource "aws_dynamodb_table" "website-count-table" {
     billing_mode = "PROVISIONED"
     read_capacity  = 5
     write_capacity = 5
-    hash_key       = "Count"
+    hash_key       = "stats"
     
     attribute {
-        name = "Count"
+        name = "stats"
         type = "S"
     }
 
+    tags = {
+        Name        = "CloudResume"
 }
