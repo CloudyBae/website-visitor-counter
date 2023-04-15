@@ -1,3 +1,2 @@
-moto[dynamodb2]
-boto3
+requests
 pytest
