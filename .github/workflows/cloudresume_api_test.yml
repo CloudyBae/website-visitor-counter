@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Set up Python 3.8 and pipenv
+    - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
         python-version: "3.8"
@@ -17,11 +17,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install moto
-        pip install boto3
+        pip install -r requirements.txt
 
         
     - name: Run tests
       run: |
         pip install pytest
-        pytest tests/
+        pytest /test/test_cloudresume_api.py -v
