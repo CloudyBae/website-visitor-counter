@@ -5,7 +5,7 @@ import json
 from moto import mock_dynamodb2
 from lambda_api import lambda_handler
 
-
+class LambdaDynamoDBTest(unittest.TestCase)
 @pytest.fixture
 def use_moto():
     @mock_dynamodb2
