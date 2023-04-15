@@ -1,21 +1,13 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const api_url = "your api here";
+    fetch(api_url)
+      .then(response => response.json())
+      .then(data => {
+		console.log(data);
+		const parsedData = JSON.parse(data.body);
+        document.getElementById("pageviews").innerHTML = parsedData.Visit_Count;
+      })
+      .catch(error => console.error("Error fetching count:", error));
+  });
 
-const api_url = "your api here";
-
-var viewCount = parseInt(localStorage.getItem("viewCount")) || 0;
-viewCount++;
-localStorage.setItem("viewCount", viewCount);
-
-fetch(api_url, {
-method: "POST",
-body: JSON.stringify({ count: viewCount }),
-})
-.then((response) => {
-    return response.json();
-})
-.then((data) => {
-    console.log("View count incremented to: " + data);
-})
-.catch((error) => {
-    console.error("Error incrementing view count: ", error);
-});
-
+// replace "pageviews" with your html item
