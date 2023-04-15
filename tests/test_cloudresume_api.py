@@ -1,6 +1,6 @@
 import requests
 
-ENDPOINT = "https://ifpg97r0z2.execute-api.us-east-1.amazonaws.com/dev/"
+ENDPOINT = "your api here"
 
 def test_can_call_endpoint_successfully():
     response = requests.get(ENDPOINT)
