@@ -7,7 +7,7 @@ resource "aws_dynamodb_table" "website-count-table" {
     
     attribute {
         name = "Count"
-        type = "N"
+        type = "S"
     }
 
 }

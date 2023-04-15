@@ -61,3 +61,9 @@ resource "aws_api_gateway_integration_response" "options" {
     "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
 }
+
+resource "aws_api_gateway_deployment" "cloudresume-api" {
+  rest_api_id = aws_api_gateway_rest_api.cloudresume-api.id
+  stage_name  = "prod"
+}
+
